@@ -1,4 +1,4 @@
-# --- coding: utf-8 ---
+# coding: utf-8
 from requests_oauthlib import OAuth1Session
 import json
 
@@ -31,8 +31,4 @@ class TwitterApiClient(object):
 			print "Error code: %d" %(responce.status_code)
 			return None
 		tweets = json.loads(responce.text)
-
-		for tweet in tweets["statuses"]:
-			text = tweet[u'text']
-			print "text:", text
 		return tweets
